@@ -14,83 +14,83 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const stats = [
   { value: "12,4k", label: "faturas processadas" },
   { value: "98,7%", label: "taxa de pagamento" },
-  { value: "R$ 4,8M", label: "em faturamento" },
+  { value: "Kz 4,8M", label: "em faturamento" },
 ];
 
-const brandLogos = ["Asteria", "Nexa", "Northstar", "Velora", "Atlas"];
+const brandLogos = ["Asteria", "Nexa", "Kwanda", "Bengo", "Atlas"];
 
 const features = [
   {
     icon: faFileInvoiceDollar,
     title: "Emissão inteligente",
     description:
-      "Automatize a criação de notas, cobranças e relatórios com controle financeiro total.",
+      "Crie facturas, recibos e relatórios com rapidez, sem perder controlo da rotina financeira da empresa.",
   },
   {
     icon: faChartLine,
     title: "Cobrança em tempo real",
     description:
-      "Acompanhe vencimentos, receitas e indicadores de performance em um painel executivo.",
+      "Acompanhe vencimentos, receitas e indicadores de desempenho em um painel executivo do mercado angolano.",
   },
   {
     icon: faShieldHalved,
     title: "Segurança institucional",
     description:
-      "Proteja dados fiscais e mantenha todos os processos alinhados às melhores práticas de compliance.",
+      "Proteja dados fiscais e mantenha processos alinhados às melhores práticas de compliance e controlo interno.",
   },
   {
     icon: faBell,
     title: "Alertas estratégicos",
     description:
-      "Receba notificações inteligentes sobre pagamentos, atrasos e oportunidades de ganho.",
+      "Receba notificações sobre pagamentos, atrasos e oportunidades de melhoria na gestão financeira.",
   },
   {
     icon: faBolt,
     title: "Automação operacional",
     description:
-      "Reduza tarefas manuais e acelere a rotina financeira com eficiência e previsibilidade.",
+      "Elimine tarefas manuais e acelere a rotina com maior eficiência, previsibilidade e controlo.",
   },
   {
     icon: faGlobe,
-    title: "Operação global",
+    title: "Operação nacional",
     description:
-      "Gerencie sua operação em múltiplos clientes, regiões e canais com visibilidade centralizada.",
+      "Gerencie clientes, filiais e canais em Angola com visibilidade centralizada e organização total.",
   },
 ];
 
 const benefits = [
-  "Dashboard executivo com visão completa do negócio",
-  "Fluxo de cobrança com automação de rotina",
-  "Controle financeiro em uma plataforma integrada",
-  "Relatórios de performance para decisões mais rápidas",
+  "Dashboard executivo com visão completa do negócio angolano",
+  "Fluxo de cobrança adaptado ao contexto empresarial local",
+  "Controle financeiro em uma plataforma integrada e moderna",
+  "Relatórios que apoiam decisões rápidas e mais seguras",
 ];
 
 const plans = [
   {
     name: "Essentials",
-    price: "R$ 149",
-    description: "Para negócios que precisam profissionalizar a cobrança e a gestão financeira.",
+    price: "Kz 29.900",
+    description: "Para negócios que precisam profissionalizar a faturação e a gestão financeira local.",
     popular: false,
     items: ["Emissão de faturas", "Cobrança básica", "Relatórios simples"],
   },
   {
     name: "Growth",
-    price: "R$ 299",
-    description: "Para empresas com operação em expansão e necessidade de controle avançado.",
+    price: "Kz 59.900",
+    description: "Para empresas em expansão e necessidade de controlo financeiro mais avançado.",
     popular: true,
     items: ["Tudo do Essentials", "Automação de cobranças", "Alertas inteligentes"],
   },
   {
     name: "Enterprise",
-    price: "Custom",
-    description: "Para organizações que exigem escalabilidade, suporte e integração personalizada.",
+    price: "Personalizado",
+    description: "Para organizações que exigem escalabilidade, suporte e integrações específicas.",
     popular: false,
     items: ["SLA premium", "Integrações customizadas", "Suporte dedicado"],
   },
 ];
 
 const steps = [
-  "Cadastre clientes, produtos e regras de faturamento.",
+  "Cadastre clientes, produtos e regras de faturação da sua operação.",
   "Automatize a emissão, cobrança e acompanhamento de pagamentos.",
   "Monitore indicadores com relatórios estratégicos e decisões em tempo real.",
 ];
@@ -99,23 +99,21 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <div className="mx-auto max-w-7xl px-6 pb-16 pt-6 lg:px-8">
-        <header className="sticky top-4 z-20 mb-8 rounded-full border border-white/10 bg-slate-950/70 px-5 py-3 shadow-[0_0_40px_rgba(15,23,42,0.6)] backdrop-blur-xl">
+        <header className="sticky top-4 z-20 mb-8 rounded-full border border-white/10 bg-slate-950/75 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.55)] backdrop-blur-xl">
           <nav className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-300 via-emerald-400 to-cyan-500 shadow-lg shadow-emerald-500/30">
-                <span className="text-lg font-black tracking-tight text-slate-950">
-                  Y
-                </span>
+            <div className="flex min-w-[160px] items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 via-blue-500 to-cyan-500 shadow-lg shadow-blue-500/30">
+                <span className="text-lg font-black tracking-tight text-white">Y</span>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
                   YETU
                 </p>
                 <p className="text-xs text-slate-300">Finance</p>
               </div>
             </div>
 
-            <div className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+            <div className="hidden flex-1 items-center justify-center gap-8 text-sm text-slate-300 md:flex">
               <a href="#solucoes" className="transition hover:text-white">
                 Soluções
               </a>
@@ -127,33 +125,41 @@ export default function Home() {
               </a>
             </div>
 
-<a
-                href="/admin"
-                className="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-500/20"
+            <div className="flex items-center gap-3">
+              <a
+                href="/login"
+                className="rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-800"
               >
-                Painel admin
+                Login
               </a>
-            </nav>
-          </header>
+              <a
+                href="/register"
+                className="rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-[0_20px_40px_rgba(59,130,246,0.25)] transition hover:translate-y-[-1px]"
+              >
+                Criar conta
+              </a>
+            </div>
+          </nav>
+        </header>
 
         <section className="grid items-center gap-12 pb-12 pt-10 lg:grid-cols-[1.12fr_0.88fr] lg:pt-16">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1.5 text-sm font-medium text-emerald-200">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1.5 text-sm font-medium text-blue-200">
               <FontAwesomeIcon icon={faFileInvoiceDollar} className="text-sm" />
-              Sistema de faturamento inteligente
+              Sistema de faturação inteligente para Angola
             </div>
 
             <h1 className="max-w-xl text-4xl font-black leading-[1.02] tracking-[-0.06em] text-white md:text-5xl lg:text-6xl">
-              O sistema financeiro que eleva a operação da sua empresa.
+              O sistema financeiro que impulsiona o crescimento da sua empresa em Angola.
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-              Centralize cobranças, automatize emissões e acompanhe sua saúde financeira com
-              precisão para impulsionar crescimento, previsibilidade e controle em escala.
+              Centralize cobranças, automatize emissões e acompanhe a saúde financeira do seu negócio
+              com mais precisão, produtividade e controlo para crescer com confiança.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-500 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_20px_40px_rgba(52,211,153,0.25)] transition hover:translate-y-[-1px]">
+              <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-500 px-6 py-3.5 font-semibold text-white shadow-[0_20px_40px_rgba(59,130,246,0.25)] transition hover:translate-y-[-1px]">
                 Começar agora
                 <FontAwesomeIcon icon={faArrowRight} className="text-sm" />
               </button>
@@ -176,7 +182,7 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-emerald-500/20 blur-3xl" />
+            <div className="absolute -left-10 top-8 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl" />
             <div className="absolute -bottom-10 right-4 h-40 w-40 rounded-full bg-cyan-500/20 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/80 p-5 shadow-[0_30px_80px_rgba(2,6,23,0.7)]">
@@ -185,9 +191,9 @@ export default function Home() {
                   <p className="text-[10px] uppercase tracking-[0.25em] text-slate-400">
                     Fluxo financeiro
                   </p>
-                  <h2 className="mt-2 text-3xl font-bold text-white">R$ 148.240</h2>
+                  <h2 className="mt-2 text-3xl font-bold text-white">Kz 148.240</h2>
                 </div>
-                <div className="rounded-2xl bg-emerald-500/15 p-3 text-emerald-300">
+                <div className="rounded-2xl bg-blue-500/15 p-3 text-blue-300">
                   <FontAwesomeIcon icon={faChartLine} className="text-xl" />
                 </div>
               </div>
@@ -198,13 +204,13 @@ export default function Home() {
                   <span className="font-semibold text-white">236</span>
                 </div>
                 <div className="h-2.5 rounded-full bg-slate-800">
-                  <div className="h-2.5 w-[78%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-500" />
+                  <div className="h-2.5 w-[78%] rounded-full bg-gradient-to-r from-blue-400 to-cyan-500" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <div className="rounded-2xl border border-white/10 bg-slate-900 p-3">
                     <p className="text-xs text-slate-400">Pagamentos</p>
-                    <p className="mt-2 text-xl font-bold text-emerald-300">92%</p>
+                    <p className="mt-2 text-xl font-bold text-blue-300">92%</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-slate-900 p-3">
                     <p className="text-xs text-slate-400">Atrasos</p>
@@ -389,11 +395,11 @@ export default function Home() {
               YETU Finance
             </p>
             <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
-              Estruture uma operação financeira mais inteligente e moderna.
+              Estruture uma operação financeira mais inteligente, moderna e preparada para Angola.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-300">
-              Desenvolvido para empresas que valorizam simplicidade, controle e crescimento sem
-              perder agilidade no dia a dia.
+              Desenvolvido para empresas que valorizam simplicidade, controlo e crescimento sem perder
+              agilidade no dia a dia de operação local.
             </p>
             <a
               href="/admin"
@@ -420,8 +426,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="mt-4 max-w-xs text-sm leading-7 text-slate-400">
-                Plataforma de faturamento e gestão financeira para empresas que querem controlar
-                operações com conforto, visão e eficiência.
+                Plataforma de faturação e gestão financeira para empresas angolanas que querem controlar
+                operações com mais conforto, visão e eficiência.
               </p>
             </div>
 
@@ -453,8 +459,8 @@ export default function Home() {
               </h4>
               <ul className="mt-4 space-y-3 text-sm text-slate-400">
                 <li>contato@yetu.finance</li>
-                <li>+55 (11) 4000-0000</li>
-                <li>São Paulo, Brasil</li>
+                <li>+244 923 000 000</li>
+                <li>Luanda, Angola</li>
               </ul>
             </div>
           </div>

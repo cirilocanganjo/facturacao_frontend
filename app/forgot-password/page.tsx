@@ -33,10 +33,10 @@ export default function ForgotPasswordPage() {
         </div>
 
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-300 via-emerald-400 to-cyan-500 text-slate-950 shadow-[0_20px_40px_rgba(52,211,153,0.2)]">
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 via-blue-500 to-cyan-500 text-white shadow-[0_20px_40px_rgba(59,130,246,0.2)]">
             <FontAwesomeIcon icon={faKey} className="text-2xl" />
           </div>
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-300">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">
             Recuperação
           </p>
           <h1 className="mt-3 text-3xl font-black text-white">Esqueceu a sua senha?</h1>
@@ -50,7 +50,7 @@ export default function ForgotPasswordPage() {
             <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-200">
               E-mail
             </label>
-            <div className="flex items-center gap-3 rounded-2xl border border-slate-700 bg-slate-950/60 px-4 py-3.5 focus-within:border-emerald-400/60">
+            <div className="flex items-center gap-3 rounded-2xl border border-slate-700 bg-slate-950/60 px-4 py-3.5 focus-within:border-blue-400/60">
               <FontAwesomeIcon icon={faEnvelope} className="text-slate-400" />
               <input
                 id="email"
@@ -72,7 +72,7 @@ export default function ForgotPasswordPage() {
           )}
 
           {success && (
-            <div className="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
+            <div className="rounded-2xl border border-blue-500/40 bg-blue-500/10 px-4 py-3 text-sm text-blue-200">
               <div className="flex items-center gap-2">
                 <FontAwesomeIcon icon={faCheck} className="text-xs" />
                 {success}
@@ -83,7 +83,7 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={loading}
-            className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-500 px-5 py-3.5 font-semibold text-slate-950 shadow-[0_20px_40px_rgba(52,211,153,0.2)] transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-500 px-5 py-3.5 font-semibold text-white shadow-[0_20px_40px_rgba(59,130,246,0.2)] transition hover:translate-y-[-1px] disabled:cursor-not-allowed disabled:opacity-70"
           >
             {loading ? "A enviar pedido..." : "Enviar instruções"}
           </button>

@@ -5,9 +5,8 @@ export type Company = {
   address: string;
   phone: string;
   email: string;
-  logo?: string | null;
+  logo?: string | File | null;
   tax_regime: string;
-  invoice_prefix: string;
   created_at?: string;
   updated_at?: string;
 };
@@ -18,9 +17,8 @@ export type CompanyPayload = {
   address: string;
   phone: string;
   email: string;
-  logo?: string | null;
+  logo?: string | File | null;
   tax_regime: string;
-  invoice_prefix: string;
 };
 
 export type ApiMessageResponse<T> = {

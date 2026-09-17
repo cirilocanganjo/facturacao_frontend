@@ -4,7 +4,6 @@ import {
   faBell,
   faBuilding,
   faChartBar,
-  faChartLine,
   faCheck,
   faChevronDown,
   faClipboardList,
@@ -12,6 +11,7 @@ import {
   faDollarSign,
   faFileInvoiceDollar,
   faFilter,
+  faGlobe,
   faMapLocationDot,
   faSearch,
   faShieldHalved,
@@ -23,76 +23,69 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const summaryCards = [
   {
-    label: "Receita total",
-    value: "Kz 1.482.400",
-    change: "+12.4%",
+    label: "Receita plataforma",
+    value: "Kz 3.420.000",
+    change: "+18.4%",
     icon: faDollarSign,
     tone: "blue",
     direction: "up",
   },
   {
-    label: "Faturas emitidas",
-    value: "4.126",
-    change: "+8.1%",
-    icon: faFileInvoiceDollar,
+    label: "Empresas ativas",
+    value: "128",
+    change: "+12.1%",
+    icon: faBuilding,
     tone: "soft",
     direction: "up",
   },
   {
-    label: "Pagamentos recebidos",
-    value: "Kz 1.214.980",
-    change: "+5.6%",
-    icon: faWallet,
+    label: "Utilizadores ativos",
+    value: "2.486",
+    change: "+8.9%",
+    icon: faUsers,
     tone: "green",
     direction: "up",
   },
   {
-    label: "Risco de atraso",
-    value: "4,8%",
-    change: "-1.2%",
+    label: "Incidências",
+    value: "14",
+    change: "-2.1%",
     icon: faBell,
     tone: "amber",
     direction: "down",
   },
 ];
 
-const revenueBars = [38, 52, 49, 62, 74, 68, 83, 90, 86, 96, 102, 112];
+const revenueBars = [30, 46, 40, 58, 64, 72, 81, 84, 90, 98, 104, 118];
 
-const invoices = [
-  { number: "YTF-1042", client: "Yetu Finance", amount: "Kz 72.800", status: "Pago", tone: "bg-emerald-100 text-emerald-700" },
-  { number: "YTF-1043", client: "Nexa Logistics", amount: "Kz 45.200", status: "Pendente", tone: "bg-amber-100 text-amber-700" },
-  { number: "YTF-1044", client: "Solaris Group", amount: "Kz 88.900", status: "Em atraso", tone: "bg-rose-100 text-rose-700" },
-  { number: "YTF-1045", client: "Bengo Energy", amount: "Kz 31.600", status: "Pago", tone: "bg-emerald-100 text-emerald-700" },
+const companies = [
+  { name: "Yetu Finance", province: "Luanda", faturacao: "Kz 520.000", status: "Ativa" },
+  { name: "Nexa Logistics", province: "Benguela", faturacao: "Kz 390.000", status: "Ativa" },
+  { name: "Solaris Group", province: "Huíla", faturacao: "Kz 340.000", status: "Pendente" },
+  { name: "Bengo Energy", province: "Cuanza Norte", faturacao: "Kz 285.500", status: "Inativa" },
 ];
 
-const payments = [
-  { name: "Transferência Samsung", amount: "Kz 84.000", date: "Hoje, 14:35", status: "Confirmado" },
-  { name: "Boleto Fábrica Silva", amount: "Kz 28.400", date: "Hoje, 09:10", status: "Pendente" },
-  { name: "Pag. assinatura YETU", amount: "Kz 12.900", date: "Ontem", status: "Confirmado" },
+const alerts = [
+  { title: "Aprovação pendente", text: "3 empresas aguardam validação do superadmin" },
+  { title: "Faturação crítica", text: "2 clientes com atraso maior que 15 dias" },
+  { title: "Backup concluído", text: "Cópia de segurança da plataforma finalizada" },
 ];
 
-const provinceRows = [
-  { province: "Luanda", total: 84, value: "Kz 472.100", width: "100%" },
-  { province: "Benguela", total: 62, value: "Kz 314.450", width: "76%" },
-  { province: "Huíla", total: 41, value: "Kz 228.300", width: "56%" },
-  { province: "Namibe", total: 27, value: "Kz 164.900", width: "38%" },
+const provinces = [
+  { province: "Luanda", value: "Kz 870.000", width: "100%" },
+  { province: "Benguela", value: "Kz 610.000", width: "78%" },
+  { province: "Huíla", value: "Kz 490.000", width: "63%" },
+  { province: "Namibe", value: "Kz 330.000", width: "45%" },
 ];
 
-const topCompanies = [
-  { name: "Yetu Finance", revenue: "Kz 245.000", growth: "+18%" },
-  { name: "Nexa Logistics", revenue: "Kz 198.400", growth: "+12%" },
-  { name: "Solaris Group", revenue: "Kz 174.300", growth: "+9%" },
-  { name: "Bengo Energy", revenue: "Kz 142.800", growth: "+7%" },
-];
-
-export default function AdminDashboardPage() {
+export default function SuperAdminDashboardPage() {
   return (
     <main className="min-h-screen bg-[#edf3ff] text-slate-800">
       <div className="px-6 py-6 lg:px-8">
         <section className="mb-6 flex flex-col gap-4 rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)] lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-600">Dashboard</p>
-            <h1 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Visão geral da faturação</h1>
+            <h1 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Painel do superadministrador</h1>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -100,9 +93,9 @@ export default function AdminDashboardPage() {
               <FontAwesomeIcon icon={faFilter} className="text-xs" />
               Filtro
             </button>
-            <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 px-3 py-2.5 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(59,130,246,0.3)]">
+            <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-2.5 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(59,130,246,0.3)]">
               <FontAwesomeIcon icon={faChartBar} className="text-xs" />
-              Relatório mensal
+              Exportar relatório
             </button>
           </div>
         </section>
@@ -165,9 +158,7 @@ export default function AdminDashboardPage() {
                     }`}
                     style={{ height: `${height}%` }}
                   />
-                  <span className="text-[10px] font-medium text-slate-500">
-                    {index + 1}
-                  </span>
+                  <span className="text-[10px] font-medium text-slate-500">{index + 1}</span>
                 </div>
               ))}
             </div>
@@ -176,7 +167,7 @@ export default function AdminDashboardPage() {
           <div className="rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
             <div className="mb-5 flex items-center justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Resumo</p>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Plataforma</p>
                 <h2 className="mt-2 text-[20px] font-bold text-slate-900">Status geral</h2>
               </div>
             </div>
@@ -184,29 +175,29 @@ export default function AdminDashboardPage() {
             <div className="space-y-4">
               <div className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-blue-700">Cash flow</span>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-blue-700">+14%</span>
+                  <span className="text-sm text-blue-700">Cobertura nacional</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-blue-700">88%</span>
                 </div>
-                <div className="mt-3 text-2xl font-bold text-slate-900">Kz 1.124.000</div>
+                <div className="mt-3 text-2xl font-bold text-slate-900">18 províncias</div>
               </div>
 
               <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-emerald-700">Pagamentos confirmados</span>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-700">92%</span>
+                  <span className="text-sm text-emerald-700">Empresas online</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-700">96%</span>
                 </div>
                 <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-emerald-100">
-                  <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600" />
+                  <div className="h-full w-[96%] rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600" />
                 </div>
               </div>
 
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-amber-700">Cobrança ativa</span>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-700">67%</span>
+                  <span className="text-sm text-amber-700">Ações críticas</span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-700">14</span>
                 </div>
                 <div className="mt-3 h-2.5 overflow-hidden rounded-full bg-amber-100">
-                  <div className="h-full w-[67%] rounded-full bg-gradient-to-r from-amber-400 to-orange-500" />
+                  <div className="h-full w-[38%] rounded-full bg-gradient-to-r from-amber-400 to-orange-500" />
                 </div>
               </div>
             </div>
@@ -217,8 +208,8 @@ export default function AdminDashboardPage() {
           <div className="rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
             <div className="mb-5 flex items-center justify-between gap-3">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Movimento</p>
-                <h2 className="mt-2 text-[20px] font-bold text-slate-900">Faturas recentes</h2>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Operação</p>
+                <h2 className="mt-2 text-[20px] font-bold text-slate-900">Empresas monitoradas</h2>
               </div>
               <button className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm">
                 Ver todas
@@ -226,24 +217,32 @@ export default function AdminDashboardPage() {
             </div>
 
             <div className="overflow-hidden rounded-[20px] border border-slate-200 bg-white">
-              <div className="grid grid-cols-[1fr_1.2fr_0.9fr_0.7fr] gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                <span>Factura</span>
-                <span>Cliente</span>
-                <span>Valor</span>
+              <div className="grid grid-cols-[1.6fr_1fr_1fr_0.8fr] gap-4 border-b border-slate-200 bg-slate-50 px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                <span>Empresa</span>
+                <span>Província</span>
+                <span>Faturação</span>
                 <span>Status</span>
               </div>
 
-              {invoices.map((invoice) => (
+              {companies.map((company) => (
                 <div
-                  key={invoice.number}
-                  className="grid grid-cols-[1fr_1.2fr_0.9fr_0.7fr] gap-4 border-b border-slate-200 px-4 py-3 last:border-b-0"
+                  key={company.name}
+                  className="grid grid-cols-[1.6fr_1fr_1fr_0.8fr] gap-4 border-b border-slate-200 px-4 py-3 last:border-b-0"
                 >
-                  <div className="font-semibold text-slate-800">{invoice.number}</div>
-                  <div className="text-slate-700">{invoice.client}</div>
-                  <div className="font-semibold text-slate-800">{invoice.amount}</div>
+                  <div className="font-semibold text-slate-800">{company.name}</div>
+                  <div className="text-slate-700">{company.province}</div>
+                  <div className="font-semibold text-slate-800">{company.faturacao}</div>
                   <div>
-                    <span className={`rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${invoice.tone}`}>
-                      {invoice.status}
+                    <span
+                      className={`rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${
+                        company.status === "Ativa"
+                          ? "bg-emerald-100 text-emerald-700"
+                          : company.status === "Pendente"
+                            ? "bg-amber-100 text-amber-700"
+                            : "bg-slate-200 text-slate-700"
+                      }`}
+                    >
+                      {company.status}
                     </span>
                   </div>
                 </div>
@@ -251,66 +250,28 @@ export default function AdminDashboardPage() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
-              <div className="mb-4 flex items-center justify-between">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Pagamentos</p>
-                  <h2 className="mt-2 text-[20px] font-bold text-slate-900">Próximas entradas</h2>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                {payments.map((payment) => (
-                  <div key={payment.name} className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-3">
-                    <div>
-                      <div className="font-semibold text-slate-800">{payment.name}</div>
-                      <div className="text-xs text-slate-500">{payment.date}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-bold text-slate-900">{payment.amount}</div>
-                      <div
-                        className={`mt-1 inline-flex rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${
-                          payment.status === "Confirmado"
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-amber-100 text-amber-700"
-                        }`}
-                      >
-                        {payment.status}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+          <div className="rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+            <div className="mb-4 flex items-center justify-between">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Alertas</p>
+                <h2 className="mt-2 text-[20px] font-bold text-slate-900">Monitoramento</h2>
               </div>
             </div>
 
-            <div className="rounded-[22px] border border-slate-200 bg-[#f7f9ff] p-5 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
-              <div className="mb-4 flex items-center justify-between">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-slate-500">Top clientes</p>
-                  <h2 className="mt-2 text-[20px] font-bold text-slate-900">Maior faturamento</h2>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                {topCompanies.map((company, index) => (
-                  <div key={company.name} className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-3">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
-                        {index + 1}
-                      </div>
-                      <div>
-                        <div className="font-semibold text-slate-800">{company.name}</div>
-                        <div className="text-xs text-slate-500">{company.revenue}</div>
-                      </div>
+            <div className="space-y-3">
+              {alerts.map((alert) => (
+                <div key={alert.title} className="rounded-2xl border border-slate-200 bg-white p-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+                      <FontAwesomeIcon icon={faCheck} className="text-xs" />
                     </div>
-
-                    <span className="rounded-full bg-emerald-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-emerald-700">
-                      {company.growth}
-                    </span>
+                    <div>
+                      <div className="font-semibold text-slate-800">{alert.title}</div>
+                      <div className="text-xs text-slate-500">{alert.text}</div>
+                    </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -328,17 +289,14 @@ export default function AdminDashboardPage() {
           </div>
 
           <div className="space-y-4">
-            {provinceRows.map(({ province, total, value, width }) => (
+            {provinces.map(({ province, value, width }) => (
               <div key={province}>
                 <div className="mb-1 flex items-center justify-between text-[14px] text-slate-700">
                   <span>{province}</span>
-                  <span className="font-semibold">{total} clientes</span>
+                  <span className="font-semibold">{value}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200">
-                    <div className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style={{ width }} />
-                  </div>
-                  <span className="min-w-[88px] text-right text-sm font-semibold text-slate-700">{value}</span>
+                <div className="h-2.5 overflow-hidden rounded-full bg-slate-200">
+                  <div className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" style={{ width }} />
                 </div>
               </div>
             ))}

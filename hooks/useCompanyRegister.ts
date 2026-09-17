@@ -11,9 +11,8 @@ const initialState: CompanyPayload = {
   address: "",
   phone: "",
   email: "",
-  logo: "",
+  logo: null,
   tax_regime: "",
-  invoice_prefix: "",
 };
 
 export function useCompanyRegister() {
@@ -25,7 +24,15 @@ export function useCompanyRegister() {
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value } = event.target;
+    const { name, value, files } = event.target as HTMLInputElement;
+
+    if (name === "logo") {
+      setForm((current) => ({
+        ...current,
+        logo: files && files[0] ? files[0] : null,
+      }));
+      return;
+    }
 
     setForm((current) => ({
       ...current,
